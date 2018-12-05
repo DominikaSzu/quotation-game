@@ -86,33 +86,43 @@ const questions = [
 	}
 ];
 
-(buildQuiz = () => {
+(buildQuiz=()=>{
 	const output = [];
 
-	questions.forEach(
-		(currentQuestion, questionNumber) => {
-			const answers = [];
+	questions.forEach((currentQuestion, questionNumber)=> {
+		const answers = [];
 
-			for(letter in currentQuestion.answers) {
-				answers.push(
-				`<label>
-					<input type="radio" name="question${questionNumber} value="${letter}">
-					${letter}: ${currentQuestion.answers[letter]}
-				</label>`
-				);
-			}
-			output.push(
-				`<div class="question">${currentQuestion.question}</div>
-				<div class="answers">${answers.join('')}</div>`
-			)
+		for (letter in currentQuestion.answers) {
+			answers.push(`<label>
+						<input type="radio" name="question${questionNumber}" value="${letter}">
+						${letter} : ${currentQuestion.answers[letter]}
+					</label>`)
 		}
-	)
-
-	quiz.innerHTML = output.join('');
+		output.push(
+			`<div class="question">${currentQuestion.question}</div>
+			<div class="answers">${answers.join("")}</div>`
+		)
+	})
+	
+	quiz.innerHTML = output.join("");
 })();
 
-
 showResults = () => {
+	const answers = quiz.querySelectorAll(".answers");
+	let correctAnswers = 0;
+
+	questions.forEach((currentQuestion, questionNumber) => {
+		const answerBox = answers[questionNumber];
+		const selector = `input[name=question${questionNumber}]:checked`;
+		const userAnswer = (answerBox.querySelector(selector) || {}).value;
+
+		if (userAnswer === currentQuestion.correctAnswer) {
+			correctAnswers += 1;
+			let rightAnswer = answerBox.querySelector(`input[value=${userAnswer}`).parentElement;
+			rightAnswer.style.color = "green";
+		}
+	})
+
 }
 
 
