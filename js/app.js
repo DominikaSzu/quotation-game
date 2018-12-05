@@ -119,10 +119,15 @@ showResults = () => {
 		if (userAnswer === currentQuestion.correctAnswer) {
 			correctAnswers += 1;
 			let rightAnswer = answerBox.querySelector(`input[value=${userAnswer}`).parentElement;
-			rightAnswer.style.color = "green";
+			rightAnswer.style.cssText = "color: green; font-weight: bold";
+		} else {
+			answerBox.style.color = "red";
 		}
 	})
 
+	let comment = correctAnswers >= 6 ? `Nice, good job!` : `Try again, you can do better!`;
+
+	results.textContent = `You gained ${correctAnswers} points. ${comment}`;
 }
 
 
