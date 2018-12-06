@@ -6,3 +6,29 @@
 *, *:before, *:after {
 	box-sizing: border-box;
 }
+
+.wrapper {
+	height: 100vh;
+	width: 100%;
+	display: flex;
+	flex-direction: column;
+	/*justify-content: center;*/
+	align-items: center;
+}
+
+.wrapper, #quiz {
+	padding: 3% 0;
+}
+
+#quiz .question {
+	padding: 10px 0;
+}
+
+#quiz .answers {
+	display: flex;
+	flex-direction: column;
+}
+
+#quiz .answers label {
+	margin-left: 10%;
+}
