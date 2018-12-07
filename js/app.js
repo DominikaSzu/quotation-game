@@ -95,7 +95,7 @@ const questions = [
 		for (letter in currentQuestion.answers) {
 			answers.push(`<label>
 						<input type="radio" name="question${questionNumber}" value="${letter}">
-						${letter} : ${currentQuestion.answers[letter]}
+						 ${currentQuestion.answers[letter]}
 					</label>`)
 		}
 		output.push(
