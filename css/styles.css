@@ -10,6 +10,7 @@
 html {
 	font-size: 17px;
   background-color: #294653;
+  font-family: 'Scada', sans-serif;
 }
 
 .wrapper {
@@ -23,8 +24,10 @@ html {
 }
 
 .wrapper .quiz-title {
-	padding: 40px;
+	padding: 40px 10px;
   color: #f1e94d;
+  text-align: center;
+  font-family: 'Bungee', cursive;
 }
 
 /*Quiz*/
@@ -48,6 +51,7 @@ html {
 	flex-direction: column;
 	padding: 12%;
 	border: 1px solid violet;
+  color: #e8e2cf;
 }
 
 /*Button to submit answers*/
