@@ -9,6 +9,7 @@
 
 html {
 	font-size: 17px;
+  background-color: #294653;
 }
 
 .wrapper {
@@ -22,9 +23,8 @@ html {
 }
 
 .wrapper .quiz-title {
-	background-color: yellow;
-	padding: 10%;
-	border: 1px solid green;
+	padding: 40px;
+  color: #f1e94d;
 }
 
 /*Quiz*/
@@ -35,10 +35,12 @@ html {
 }
 
 .wrapper #quiz .question {
-	background-color: pink;
+	background-color: #e8e2cf;
 	padding: 10%;
 	text-align: justify;
 	border: 1px solid blue;
+  border-radius: 5px;
+  color: #294653;
 }
 
 .wrapper #quiz .answers {
@@ -54,7 +56,7 @@ html {
 	border: 1px solid brown;
 	width: 90px;
 	height: 50px;	
-	margin: 10%;
+	margin: 30px;
 }
 
 /*Box with info about results*/

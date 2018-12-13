@@ -119,9 +119,9 @@ showResults = () => {
 		if (userAnswer === currentQuestion.correctAnswer) {
 			correctAnswers += 1;
 			let rightAnswer = answerBox.querySelector(`input[value=${userAnswer}`).parentElement;
-			rightAnswer.style.cssText = "color: green; font-weight: bold";
+			rightAnswer.style.cssText = "color: #527d3d; font-weight: bold";
 		} else {
-			answerBox.style.color = "red";
+			answerBox.style.color = "#d17076";
 		}
 	})
 
