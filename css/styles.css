@@ -10,7 +10,7 @@
 html {
 	font-size: 17px;
   	background-color: #294653;
- 	 font-family: 'Scada', sans-serif;
+ 	font-family: 'Scada', sans-serif;
 }
 
 .wrapper {
@@ -24,9 +24,9 @@ html {
 
 .wrapper .quiz-title {
 	padding: 40px 10px;
-  color: #f1e94d;
-  text-align: center;
-  font-family: 'Bungee', cursive;
+  	color: #f1e94d;
+  	text-align: center;
+  	font-family: 'Bungee', cursive;
 }
 
 /*Quiz*/
@@ -58,6 +58,10 @@ html {
 	border-radius: 50%;	
 	cursor: pointer;
 	outline: none;
+	border: none;
+	background-color: #e8e2cf;
+	font-family: 'Scada', sans-serif;
+	text-transform: uppercase;
 }
 
 .wrapper #submit:focus {
@@ -71,6 +75,24 @@ html {
   border-radius: 5px;
   color: #294653;
   margin: 15px;
-  padding: 10%;
-  width: 90%;
+  padding: 20px;
+}
+
+@media screen and (min-width: 670px) and (max-width: 1200px) {
+	.wrapper #quiz,
+	.wrapper #results {
+		width: 80%;
+	}
+
+	.wrapper #results {
+		margin: 5% auto;
+		height: 150px;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+	}
+}
+
+@media screen and (min-width: 1201px) {
+	
 }
