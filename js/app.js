@@ -1,6 +1,7 @@
 const quiz = document.getElementById("quiz");
 const results = document.getElementById("results");
 const submitBtn = document.getElementById("submit");
+const restartBtn = document.getElementById("restart");
 
 const questions = [
 	{
@@ -123,11 +124,11 @@ showResults = () => {
 			rightAnswer.style.cssText = "color: #527d3d; font-weight: bold";
 		} else {
 			if (userAnswer !== undefined) {
-				console.log("user took wrong decision , it is not " + userAnswer)
 				let wrongAnswer = answerBox.querySelector(`input[value=${userAnswer}`);
 				wrongAnswer.parentElement.style.color = "#d17076";
 			} else {
-				answerBox.style.color = "pink";
+				answerBox.style.color = "#ffc0cb";
+				// IT DOESN NOT TURN PINK AFTER RESET AND REMAIN BOLD
 			}
 		}
 	})
@@ -137,5 +138,14 @@ showResults = () => {
 	results.textContent = `You gained ${correctAnswers} points. ${comment}`;
 }
 
+startNewQuiz = () => {
+	let elements = quiz.querySelectorAll("input[type='radio']");
+	elements.forEach(el => {
+		el.checked = false;
+		// el.parentElement.style.color= "";
+		el.parentElement.style.color= "#e8e2cf";
+	});
+}
 
+restartBtn.addEventListener("click", startNewQuiz);
 submitBtn.addEventListener("click", showResults);

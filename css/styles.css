@@ -52,9 +52,16 @@ html {
 	content:"\0022";
 }
 
-/*Button to submit answers*/
+/*Buttons to submit and restart answers*/
 
-.wrapper #submit {
+.wrapper .buttons {
+	display: flex;
+	justify-content: space-around;
+	width: 50%;
+}
+
+.wrapper #submit,
+.wrapper #restart {
 	background-color: #e8e2cf;
 	width: 90px;
 	height: 90px;
@@ -68,7 +75,8 @@ html {
 	color: #294653;
 }
 
-.wrapper #submit:focus {
+.wrapper #submit:focus,
+.wrapper #restart:focus {
 	border: 3px solid #65b2b8;
 }
 
@@ -99,7 +107,7 @@ html {
 	.wrapper #quiz,
 	.wrapper #results {
 		width: 80%;
-		font-size: 21px;
+		font-size: 20px;
 		max-width: 600px;
 	}
 
