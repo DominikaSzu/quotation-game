@@ -117,11 +117,18 @@ showResults = () => {
 		const userAnswer = (answerBox.querySelector(selector) || {}).value;
 
 		if (userAnswer === currentQuestion.correctAnswer) {
+			// color correct user answer in green and add 1 point
 			correctAnswers += 1;
 			let rightAnswer = answerBox.querySelector(`input[value=${userAnswer}`).parentElement;
 			rightAnswer.style.cssText = "color: #527d3d; font-weight: bold";
 		} else {
-			answerBox.style.color = "#d17076";
+			if (userAnswer !== undefined) {
+				console.log("user took wrong decision , it is not " + userAnswer)
+				let wrongAnswer = answerBox.querySelector(`input[value=${userAnswer}`);
+				wrongAnswer.parentElement.style.color = "#d17076";
+			} else {
+				answerBox.style.color = "pink";
+			}
 		}
 	})
 
