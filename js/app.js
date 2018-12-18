@@ -143,6 +143,7 @@ startNewQuiz = () => {
 		el.checked = false;
 		el.parentElement.style.color= "#e8e2cf";
 		el.parentElement.style.fontWeight = "normal";
+		results.textContent = "Take the quiz and find out!";
 	});
 }
 
