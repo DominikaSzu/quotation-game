@@ -127,8 +127,7 @@ showResults = () => {
 				let wrongAnswer = answerBox.querySelector(`input[value=${userAnswer}`);
 				wrongAnswer.parentElement.style.color = "#d17076";
 			} else {
-				answerBox.style.color = "#ffc0cb";
-				// IT DOESN NOT TURN PINK AFTER RESET AND REMAIN BOLD
+				answerBox.querySelectorAll("label").forEach(answer => answer.style.color = "#ffc0cb");
 			}
 		}
 	})
@@ -142,8 +141,8 @@ startNewQuiz = () => {
 	let elements = quiz.querySelectorAll("input[type='radio']");
 	elements.forEach(el => {
 		el.checked = false;
-		// el.parentElement.style.color= "";
 		el.parentElement.style.color= "#e8e2cf";
+		el.parentElement.style.fontWeight = "normal";
 	});
 }
 
